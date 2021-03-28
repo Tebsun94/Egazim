@@ -22,7 +22,7 @@ class CreateCompaniesTable extends Migration
             $table->string('phone');
             $table->string('usertype');
             $table->string('taxidentifier');
-            $table->binary('imagelogo');
+            $table->string('imagelogo');
             $table->timestamp('email_verified_at')->nullable();
             $table->timestamps();
         });

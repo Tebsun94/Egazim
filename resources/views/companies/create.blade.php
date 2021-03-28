@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Company') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('companies.store') }}">
+                    <form method="POST" action="{{ route('companies.store') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group row">
@@ -86,20 +86,20 @@
                         </div>
 
 
-                                <div class="form-group row">
+                        <div class="form-group row">
 
-                                    <label for="usertype" class="col-md-4 col-form-label text-md-right">{{ __('User Type') }}</label>
+                            <label for="usertype" class="col-md-4 col-form-label text-md-right">{{ __('User Type') }}</label>
 
-                                    <div class="col-md-6">
+                            <div class="col-md-6">
 
-                                    <select name="usertype" id="usertype">
-                                    <option value="" disabled selected>-- Select Role --</option>
-                                    <option value="Manufacturer">Manufacturer</option>
-                                    <option value="Distributor">Distributor</option>
-                                    <option value="Wholesaler">Driver</option>
-                                    </select>
+                                <select name="usertype" id="usertype">
+                                <option value="" disabled selected>-- Select Role --</option>
+                                <option value="Manufacturer">Manufacturer</option>
+                                <option value="Distributor">Distributor</option>
+                                <option value="Wholesaler">Driver</option>
+                                </select>
 
-                                    @error('usertype')
+                                @error('usertype')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -127,7 +127,7 @@
                             <label for="imagelogo" class="col-md-4 col-form-label text-md-right">{{ __('Logo') }}</label>
 
                             <div class="col-md-6">
-                                <input id="imagelogo" type="file" class="form-control @error('imagelogo') is-invalid @enderror" name="imagelogo" required>
+                                <input id="imagelogo" type="file" class="form-control @error('imagelogo') is-invalid @enderror" name="imagelogo">
 
                                 @error('imagelogo')
                                     <span class="invalid-feedback" role="alert">

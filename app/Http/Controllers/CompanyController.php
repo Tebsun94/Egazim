@@ -38,7 +38,32 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-        Company::create($request->all());
+        $request->validate([
+            'companyname' => ['required', 'string', 'max:255'],
+            'category' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:companies'],
+            'address' => ['required', 'string', 'max:255'],
+            'phone' => ['required', 'string', 'max:255'],
+            'usertype' => ['required', 'string', 'max:255'],
+            'taxidentifier' => ['required', 'string', 'max:255'],
+            'imagelogo' => ['image','mimes:jpeg,png,jpg,gif,svg', 'max:5048'],
+        ]);
+
+        $imageName = time().'.'.$request->imagelogo->extension();
+
+        $request->imagelogo->move(public_path('images'), $imageName);
+
+        Company::create([
+            'companyname' => $request['companyname'],
+            'category' => $request['category'],
+            'categoryName' => $request['categoryName'],
+            'address' => $request['address'],
+            'email' => $request['email'],
+            'phone' => $request['phone'],
+            'usertype' => $request['usertype'],
+            'taxidentifier' => $request['taxidentifier'],
+            'imagelogo' => $imageName,
+        ]);
 
         return redirect()->route('companies.index')
             ->with('success', 'Company created successfully.');

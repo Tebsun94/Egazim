@@ -3,9 +3,9 @@
 @section('content')
 <div class="container-fluid">
 
-    @if ($message = Session::get('success'))
-        <div class="alert alert-success">
-            <p>{{$message}}</p>
+    @if (session()->has('message'))
+        <div class="alert alert-success mt-5">
+            <p>{{session()->get('message')}}</p>
         </div>
     @endif
 

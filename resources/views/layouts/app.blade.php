@@ -110,10 +110,12 @@
                                     <a class="nav-link" href="{{ route('companies.index') }}">
                                     {{ __('All companies') }}</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('companies.create') }}">
-                                    <span data-feather="layers"></span>{{ __('Add a company') }}</a>
-                                </li>
+                                @if (Auth::check())
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('companies.create') }}">
+                                        <span data-feather="layers"></span>{{ __('Add a company') }}</a>
+                                    </li>
+                                @endif
                             </ul>
                                 </div>
                                 </div>
