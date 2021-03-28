@@ -52,7 +52,7 @@ class CompanyController extends Controller
      */
     public function show(Company $company)
     {
-        return view('companies.show', compact('Company'));
+        return view('companies.show', compact('company'));
     }
 
     /**
@@ -63,7 +63,7 @@ class CompanyController extends Controller
      */
     public function edit(Company $company)
     {
-        return view('companies.edit', compact('Company'));
+        return view('companies.edit', compact('company'));
     }
 
     /**

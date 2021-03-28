@@ -18,7 +18,7 @@
                 <div class="card-header">{{ __('Company') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('company') }}">
+                    <form method="POST" action="{{ route('companies.update', $company->id) }}">
                         @csrf
 
                         <div class="form-group row">
