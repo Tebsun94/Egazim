@@ -26,7 +26,7 @@
             </div>
             <table class="table table-bordered table-striped table-responsive-lg">
                 <tr>
-                    <th>No</th>
+                    <th>Company ID</th>
                     <th>Name</th>
                     <th>Category</th>
                     <th>Type</th>
@@ -45,11 +45,11 @@
                         <td>
                             <form action="{{ route('companies.destroy', $company->id) }}" method="POST">
 
-                                <a href="{{ route('companies.show', $company->id) }}" title="show">
+                                <a class="mx-2" href="{{ route('companies.show', $company->id) }}" title="show">
                                     <i class="fas fa-eye text-success  fa-lg"></i>
                                 </a>
 
-                                <a href="{{ route('companies.edit', $company->id) }}">
+                                <a class="mx-3" href="{{ route('companies.edit', $company->id) }}">
                                     <i class="fas fa-edit  fa-lg"></i>
                                 </a>
 
