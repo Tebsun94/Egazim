@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-12">
-        <h1 class="display-1 text-center">Egazim Solution</h1>
+        <h1 class="display-1 text-center mt-5">Egazim Solution</h1>
         </div>
     </div>
     <div class="row justify-content-center">
